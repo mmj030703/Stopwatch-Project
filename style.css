@@ -59,6 +59,7 @@ body {
     user-select: text;
     color: #222;
     transition: all .3s ease;
+    user-select: none;
 }
 
 .buttons .btn:hover {
