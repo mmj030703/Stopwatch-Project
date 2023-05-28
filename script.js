@@ -57,9 +57,12 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let intervalId = 0;
+let startCounter = 1;
 
 
 const onStart = () => {
+    if(startCounter > 1) return;
+    startCounter++;
     intervalId = setInterval(() => {
         milliseconds++;
         if (milliseconds === 60) {
@@ -79,6 +82,7 @@ const onStart = () => {
 
 const onStop = () => {
     clearInterval(intervalId);
+    startCounter = 1;
 }
 
 const onReset = () => {
@@ -87,6 +91,7 @@ const onReset = () => {
     seconds = 0;
     minutes = 0;
     displayTime();
+    startCounter = 1;
 }
 
 const displayTime = () => {
